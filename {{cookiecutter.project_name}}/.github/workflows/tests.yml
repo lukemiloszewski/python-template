@@ -1,0 +1,51 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        python-version: ['3.7', '3.8', '3.9']
+        os: [ubuntu-latest]
+
+    steps:
+    - name: Check out Latest Code
+      uses: actions/checkout@v2
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ '{{' }} matrix.python-version {{ '}}' }}
+        architecture: x64
+
+    - name: set PY
+      run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
+
+    - name: Use pre-commit cache
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pre-commit
+        key: pre-commit|${{ '{{' }} env.PY {{ '}}' }}|${{ '{{' }} hashFiles('.pre-commit-config.yaml') {{ '}}' }}
+
+    - name: Update Dependencies
+      run: |
+        pip install --upgrade pip setuptools wheel
+
+    - name: Run Pre-Commit Hooks
+      run: |
+        pip install pre-commit
+        pre-commit run --all-files --show-diff-on-failure
+
+    - name: Run Tests
+      run: |
+        pip install tox
+        tox

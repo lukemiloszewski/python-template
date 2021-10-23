@@ -1,0 +1,11 @@
+{
+  "project_name": "python-template",
+  "package_name": "{{ cookiecutter.project_name.replace('-', '_') }}",
+  "friendly_name": "{{ cookiecutter.project_name.replace('-', ' ').title() }}",
+  "description": "A cookiecutter template to automate python development",
+  "author": "Luke Miloszewski",
+  "email": "lukemiloszewski@gmail.com",
+  "github_user": "lukemiloszewski",
+  "package_version": "0.1.0",
+  "init_git_repo": ["yes", "no"]
+}
