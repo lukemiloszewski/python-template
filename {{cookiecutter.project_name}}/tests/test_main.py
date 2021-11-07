@@ -1,8 +1,7 @@
 """Test cases for the __main__ module."""
-import pytest
 from typer.testing import CliRunner
 
-from {{cookiecutter.package_name}} import __main__
+from testing import __main__
 
 
 def test_main_runs(runner: CliRunner) -> None:
