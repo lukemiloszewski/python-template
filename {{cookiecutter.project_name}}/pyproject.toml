@@ -13,14 +13,13 @@ packages = [
 ]
 {% endif -%}
 classifiers = [
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
 ]
 
 [tool.poetry.dependencies]
-python = "^3.6.1"
+python = "^3.7.1"
 typer = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
