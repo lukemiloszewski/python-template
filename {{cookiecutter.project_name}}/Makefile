@@ -20,7 +20,7 @@ test: clean
 	poetry run pytest tests -v
 
 lint:
-	poetry run flake8 mypy pydocstyle src tests
+	poetry run flake8 src tests
 	poetry run mypy src tests
 	poetry run pydocstyle src tests
 
