@@ -15,4 +15,24 @@ A package template to automate python development 🐍
 * ➕ Automated dependency updates with Dependabot
 * 🚀 Release changelog with Release Drafter
 
-This template supports Python 3.7, 3.8 and 3.9.
+This template supports Python 3.7.x, 3.8.x and 3.9.x.
+
+## Requirements
+
+* install python 3.7.x, 3.8.x, 3.9.x
+* install [poetry](https://python-poetry.org)
+* install [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.3/)
+* install [tox](https://tox.wiki/en/latest/index.html)
+
+## Installation
+
+```shell
+# configure template
+cookiecutter gh:lukemiloszewski/python-template
+
+# initialise project (inside project directory)
+make init
+
+# run tests
+tox
+```
