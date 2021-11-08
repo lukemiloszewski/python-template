@@ -40,12 +40,14 @@ jobs:
       run: |
         pip install --upgrade pip setuptools wheel
 
+    - name: Install Development Dependencies
+      run: |
+        pip install pre-commit mypy tox pytest typer
+
     - name: Run Pre-Commit Hooks
       run: |
-        pip install pre-commit
         pre-commit run --all-files --show-diff-on-failure
 
     - name: Run Tests
       run: |
-        pip install tox
         tox
