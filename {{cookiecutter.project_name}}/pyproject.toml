@@ -62,8 +62,8 @@ multi_line_output = 3
 line_length = 79
 
 [tool.pydocstyle]
-convention = google
-add-ignore = D100, D104, D212
+convention = "google"
+add_ignore = ["D100","D104","D212"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
