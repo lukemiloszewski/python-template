@@ -24,23 +24,18 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ '{{' }} matrix.python-version {{ '}}' }}
+        python-version: ${{ matrix.python-version }}
         architecture: x64
 
     - name: Upgrade pip
       run: |
-        pip install --upgrade pip
+        python -m pip install --upgrade pip
         pip --version
 
     - name: Install Poetry
       run: |
-        pipx install poetry
+        python -m pip install poetry
         poetry --version
-
-    - name: Install Tox
-      run: |
-        pipx install tox
-        tox --version
 
     - name: Install Dependencies
       run: |
@@ -48,8 +43,8 @@ jobs:
 
     - name: Run Pre-Commit Hooks
       run: |
-        pre-commit run --all-files --show-diff-on-failure --color=always
+        make pre-commit
 
     - name: Run Tests
       run: |
-        python -m tox
+        make test

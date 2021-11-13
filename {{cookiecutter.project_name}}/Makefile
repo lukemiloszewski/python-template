@@ -35,9 +35,6 @@ mypy:
 pydocstyle:
 	poetry run pydocstyle src tests
 
-.PHONY: lint
-lint: flake8 mypy pydocstyle
-
 .PHONY: isort
 isort:
 	poetry run isort src tests
@@ -46,11 +43,9 @@ isort:
 black:
 	poetry run black src tests
 
-.PHONY: format
-format: isort black
-
-.PHONY: check
-check: test lint format
+.PHONY: pre-commit
+pre-commit:
+	poetry run pre-commit run --all-files --show-diff-on-failure --color=always
 
 .PHONY: publish
 publish:
