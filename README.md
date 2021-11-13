@@ -27,11 +27,14 @@ This template supports Python 3.7.x, 3.8.x and 3.9.x.
 ## Installation
 
 ```shell
-# configure template
+# install project
 cookiecutter gh:lukemiloszewski/python-template
 
-# initialise project (inside project directory)
+# initialise project
 make init
+
+# run linting and formatting
+make pre-commit
 
 # run tests
 tox
