@@ -1,4 +1,4 @@
-name: Tests
+name: Continuous Integration
 
 on:
   push:
@@ -27,27 +27,29 @@ jobs:
         python-version: ${{ '{{' }} matrix.python-version {{ '}}' }}
         architecture: x64
 
-    - name: set PY
-      run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
-
-    - name: Use pre-commit cache
-      uses: actions/cache@v2
-      with:
-        path: ~/.cache/pre-commit
-        key: pre-commit|${{ '{{' }} env.PY {{ '}}' }}|${{ '{{' }} hashFiles('.pre-commit-config.yaml') {{ '}}' }}
-
-    - name: Update Dependencies
+    - name: Upgrade pip
       run: |
-        pip install --upgrade pip setuptools wheel
+        pip install --upgrade pip
+        pip --version
 
-    - name: Install Development Dependencies
+    - name: Install Poetry
       run: |
-        pip install pre-commit mypy tox pytest typer
+        pipx install poetry
+        poetry --version
+
+    - name: Install Tox
+      run: |
+        pipx install tox
+        tox --version
+
+    - name: Install Dependencies
+      run: |
+        make init
 
     - name: Run Pre-Commit Hooks
       run: |
-        pre-commit run --all-files --show-diff-on-failure
+        pre-commit run --all-files --show-diff-on-failure --color=always
 
     - name: Run Tests
       run: |
-        tox
+        python -m tox
