@@ -1,4 +1,4 @@
-![Luke Miloszewski](./assets/README.svg)
+![Luke Miloszewski](./assets/README.png)
 
 # Python Template
 
