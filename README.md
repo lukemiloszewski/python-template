@@ -1,3 +1,5 @@
+![Luke Miloszewski](./assets/README.svg)
+
 # Python Template
 
 A package template to automate python development 🐍

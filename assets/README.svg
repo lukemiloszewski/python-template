@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 586.9047991466522 101.7013340274118" width="586.9047991466522" height="101.7013340274118">
+  <!-- svg-source:excalidraw -->
+  
+  <defs>
+    <style>
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://plus.excalidraw.com/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://plus.excalidraw.com/Cascadia.woff2");
+      }
+    </style>
+  </defs>
+  <g transform="translate(139.27156860202547 31.78091298362972) rotate(0 144.5 22.5)"><text x="0" y="32" font-family="Virgil, Segoe UI Emoji" font-size="36px" fill="#000000" text-anchor="start" style="white-space: pre;" direction="ltr">Luke Miloszewski</text></g><g stroke-linecap="round"><g transform="translate(9.271568602025468 13.780912983629719) rotate(0 284.1808309713006 -1.4305388604346092)"><path d="M2.7 -0.14 C96.28 0.23, 469.11 1.19, 562.21 0.86 M0.73 -2.69 C95.14 -3.06, 473.31 -4.11, 567.63 -3.69" stroke="#000000" stroke-width="4" fill="none"></path></g></g><g stroke-linecap="round"><g transform="translate(12.271568602025468 88.78091298362972) rotate(179.35034711081272 282.4304531861469 -0.22871558904648737)"><path d="M2.54 -0.87 C97.01 -1.29, 471.02 -0.74, 564.38 -0.18 M0.48 -3.81 C94.83 -2.53, 469.06 3, 562.35 3.35" stroke="#000000" stroke-width="4" fill="none"></path></g></g></svg>
