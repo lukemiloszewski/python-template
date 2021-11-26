@@ -1,5 +1,3 @@
-![Luke Miloszewski](./assets/README.png)
-
 # Python Template
 
 A package template to automate python development 🐍
