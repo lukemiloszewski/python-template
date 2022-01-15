@@ -3,9 +3,7 @@ init:
 	poetry install
 	poetry run pre-commit install --hook-type pre-commit
 
-clean: clean-pyc clean-test
-
-test: clean
+test:
 	poetry run pytest tests -v --cov
 
 flake8:
