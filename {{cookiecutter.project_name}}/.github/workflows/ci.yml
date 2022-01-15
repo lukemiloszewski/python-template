@@ -44,9 +44,9 @@ jobs:
       id: poetry-cache
       with:
         path: .venv
-        key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+        key: ${{ '{{' }} runner.os {{ '}}' }}-poetry-${{ '{{' }} hashFiles('**/poetry.lock') {{ '}}' }}
         restore-keys: |
-          ${{ runner.os }}-poetry-venv
+         ${{ '{{' }} runner.os {{ '}}' }}-poetry-venv
 
     - name: Install Dependencies
       run: |
