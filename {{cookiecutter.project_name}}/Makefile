@@ -3,16 +3,6 @@ init:
 	poetry install
 	poetry run pre-commit install --hook-type pre-commit
 
-clean-pyc:
-	find . -name '*.pyc' -exec rm -f {} +
-	find . -name '*.pyo' -exec rm -f {} +
-	find . -name '*~' -exec rm -f {} +
-	find . -name '__pycache__' -exec rm -fr {} +
-
-clean-test:
-	rm -f .coverage
-	rm -f coverage.*
-
 clean: clean-pyc clean-test
 
 test: clean
@@ -37,4 +27,4 @@ pre-commit:
 	poetry run pre-commit run --all-files --show-diff-on-failure --color=always
 
 publish:
-	poetry publish --build --repository repo
+	poetry publish --build
