@@ -9,6 +9,7 @@ version-resolver:
   patch:
     labels:
       - 'bug'
+      - 'chore'
   default: patch
 name-template: '$RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
@@ -17,30 +18,18 @@ template: |
   # What's Changed
   $CHANGES
 categories:
-  - title: ":boom: Breaking Changes"
+  - title: ":bang: Breaking Changes"
     label: "breaking"
   - title: ":rocket: Features"
     label: "feature"
-  - title: ":fire: Removals and Deprecations"
-    label: "removal"
   - title: ":beetle: Fixes"
     label: "bug"
-  - title: ":racehorse: Performance"
-    label: "performance"
-  - title: ":rotating_light: Testing"
-    label: "testing"
-  - title: ":construction_worker: Continuous Integration"
-    label: "ci"
-  - title: ":books: Documentation"
-    label: "documentation"
-  - title: ":hammer: Refactoring"
-    label: "refactoring"
-  - title: ":lipstick: Style"
-    label: "style"
+  - title: ":wrench: Chores"
+    label: "chore"
+  - title: ":fire: Removals and Deprecations"
+    label: "removal"
   - title: ":package: Dependencies"
-    labels:
-      - "dependencies"
-      - "build"
+    label: "dependencies"
 autolabeler:
   - label: 'breaking'
     branch:
@@ -48,40 +37,21 @@ autolabeler:
   - label: 'feature'
     branch:
       - '/feature\/.+/'
-  - label: 'removal'
-    branch:
-      - '/removal\/.+/'
   - label: 'bug'
     branch:
       - '/bug\/.+/'
       - '/fix\/.+/'
-  - label: 'performance'
+  - label: 'removal'
     branch:
-      - '/performance\/.+/'
-  - label: 'testing'
-    branch:
-      - '/testing\/.+/'
-  - label: 'ci'
-    branch:
-      - '/ci\/.+/'
-  - label: 'documentation'
-    branch:
-      - '/documentation\/.+/'
-  - label: 'refactoring'
-    branch:
-      - '/refactoring\/.+/'
-  - label: 'style'
-    branch:
-      - '/style\/.+/'
+      - '/removal\/.+/'
   - label: 'dependencies'
     branch:
       - '/dependencies\/.+/'
-  - label: 'build'
-    branch:
-      - '/build\/.+/'
+      - '/deps\/.+/'
   - label: 'release'
     branch:
       - '/release\/.+/'
 exclude-labels:
-  - "skip-changelog"
-  - "release"
+  - 'skip-changelog'
+  - 'release'
+  - 'question'
