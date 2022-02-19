@@ -1,6 +1,5 @@
-# Python Template
-
-A package template to automate python development 🐍
+<h1 align="center">Python Template</h1>
+<p align="center">A modern package template to automate python development 🐍</p>
 
 ## Overview
 
