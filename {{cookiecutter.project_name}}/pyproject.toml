@@ -13,13 +13,12 @@ packages = [
 ]
 {% endif -%}
 classifiers = [
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7.1"
+python = ">=3.8.0,<3.10.0"
 typer = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
@@ -54,12 +53,12 @@ show_error_codes = true
 show_error_context = true
 
 [tool.black]
-line-length = 79
+line-length = 100
 
 [tool.isort]
 profile = "black"
 multi_line_output = 3
-line_length = 79
+line_length = 100
 
 [tool.pydocstyle]
 convention = "google"
