@@ -30,27 +30,6 @@ categories:
     label: "removal"
   - title: ":package: Dependencies"
     label: "dependencies"
-autolabeler:
-  - label: 'breaking'
-    branch:
-      - '/breaking\/.+/'
-  - label: 'feature'
-    branch:
-      - '/feature\/.+/'
-  - label: 'bug'
-    branch:
-      - '/bug\/.+/'
-      - '/fix\/.+/'
-  - label: 'removal'
-    branch:
-      - '/removal\/.+/'
-  - label: 'dependencies'
-    branch:
-      - '/dependencies\/.+/'
-      - '/deps\/.+/'
-  - label: 'release'
-    branch:
-      - '/release\/.+/'
 exclude-labels:
   - 'skip-changelog'
   - 'release'
